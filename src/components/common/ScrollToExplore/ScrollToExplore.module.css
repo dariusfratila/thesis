@@ -1,0 +1,39 @@
+.scrollToExplore {
+    position: fixed;
+    left: 50%;
+    bottom: 15px;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scrollToExplore p {
+    font-size: 0.8em;
+    margin: 0;
+    letter-spacing: 0.20em;
+}
+
+.scrollToExplore .line {
+    background-color: rgb(233, 233, 236);
+    height: 3px;
+    width: 0;
+    margin: 10px auto 0;
+    transition: width 0.9s ease-in-out;
+}
+
+.visible .line {
+    width: 100px;
+}
+
+.scrollToExplore:not(.visible) .line {
+    width: 0;
+}

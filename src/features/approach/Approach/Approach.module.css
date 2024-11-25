@@ -1,0 +1,140 @@
+.container {
+    position: relative;
+    background-color: black;
+    overflow: hidden;
+}
+
+.headingBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: white;
+    margin-top: -20px;
+}
+
+.heading {
+    font-size: 3.6rem;
+    color: black;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1.2px;
+    padding-bottom: 30px;
+    position: relative;
+    max-width: 600px;
+}
+
+.heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 4px;
+    background-color: #0056b3;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #555;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    max-width: 120vh;
+}
+
+.lighterText {
+    font-weight: 500;
+}
+
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.card {
+    /* background: #fff; */
+    background-color: rgb(248, 249, 250);
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    box-sizing: border-box;
+    /* transition: all 0.3s ease; */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    /* clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%); */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+
+    transition: all 0.3s ease, box-shadow 0.3s ease-out, transform 0.3s ease-out;
+
+}
+
+.cardButton {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cardButton:hover {
+    background-color: darken(#0056b3, 10%);
+}
+
+.cardGradientBackground {
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.cardTitle {
+    font-size: 1.8rem;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.cardDescription {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2.4rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+}

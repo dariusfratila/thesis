@@ -1,0 +1,366 @@
+.container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 86vh;
+    padding: 20px;
+    width: 100%;
+    margin: 0;
+    background-color: #f0f2f5;
+}
+
+.videoUploadSection {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    max-width: none;
+    padding: 40px;
+    gap: 40px;
+}
+
+.spinnerWrapper {
+    padding-left: 50px;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+.uploadStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes glowingBorder {
+
+    0%,
+    100% {
+        box-shadow: 0 0 8px #0056b3;
+    }
+
+    50% {
+        box-shadow: 0 0 12px #007bff;
+    }
+}
+
+.uploadAreaAnimating {
+    animation: glowingBorder 2s ease-in-out infinite;
+}
+
+
+.uploadArea,
+.videoPreview,
+.progressBarContainer,
+.lipReadOutput {
+    border-radius: 4px;
+}
+
+.lipReadOutput {
+    margin-bottom: -40px;
+}
+
+.uploadArea:focus {
+    outline: 2px solid #0056b3;
+}
+
+
+.header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 34px;
+}
+
+.header p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #666;
+}
+
+.uploadArea {
+    border: 2px dashed #0056b3;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.dragActive {
+    background-color: #e8f0fe;
+}
+
+.uploadPrompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.uploadPrompt i {
+    color: #007bff;
+    margin-bottom: 8px;
+}
+
+.uploadInput {
+    display: none;
+}
+
+.videoPreviewWrapper {
+    text-align: center;
+}
+
+.videoPreview {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.progressBarContainer {
+    margin-top: 20px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 10px;
+}
+
+.progressBar {
+    height: 100%;
+    background-color: #0056b3;
+    transition: width 0.4s ease;
+}
+
+.rules {
+    padding-top: 20px;
+}
+
+.rules h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.rules ul {
+    list-style: inside;
+    padding-left: 0;
+}
+
+.rules li {
+    font-size: 16px;
+    color: #666;
+}
+
+
+.uploadButton {
+    margin-top: 20px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.clearButton {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.uploadButton:hover,
+.clearButton:hover {
+    background-color: #3399ff;
+}
+
+.lipReadOutput {
+    margin-top: 20px;
+    background-color: #e3f2fd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.videoUploadSection {
+    max-width: 800px;
+    padding: 40px;
+    gap: 40px;
+}
+
+.header h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.75rem;
+    font-weight: 600;
+}
+
+.header p,
+.rules h2,
+.rules li {
+    font-size: 18px;
+}
+
+.uploadPrompt i {
+    font-size: 3rem;
+}
+
+.uploadButton,
+.clearButton {
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+.progressBarContainer {
+    height: 20px;
+}
+
+.uploadArea,
+.videoPreview,
+.progressBarContainer,
+.lipReadOutput {
+    border-radius: 10px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes ellipsis {
+    to {
+        width: 1.25em;
+    }
+}
+
+.loadingText {
+    display: inline-block;
+    position: relative;
+    color: #000;
+    font-size: 18px;
+    animation: blink 1.5s infinite;
+}
+
+.loadingText::after {
+    /* content: '...'; */
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: ellipsis 1.5s infinite;
+    position: absolute;
+    right: 0;
+    width: 0px;
+}
+
+.uploadButton:disabled,
+.clearButton:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    border: 1px solid #ccc;
+}
+
+.uploadButton:disabled:hover,
+.clearButton:disabled:hover {
+    background-color: #ccc;
+}
+
+.displayContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.halfContainer {
+    flex: 1;
+    padding: 10px;
+}
+
+
+.captureButton {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.captureButton:hover {
+    background-color: #45a049;
+}
+
+.startRecordingButton,
+.stopRecordingButton {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.startRecordingButton {
+    background-color: #008CBA;
+}
+
+.startRecordingButton:hover {
+    background-color: #007ba7;
+}
+
+.stopRecordingButton {
+    background-color: #f44336;
+}
+
+.stopRecordingButton:hover {
+    background-color: #da190b;
+}
+
+.captureButton:active,
+.startRecordingButton:active,
+.stopRecordingButton:active {
+    transform: scale(0.98);
+}
+

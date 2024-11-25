@@ -1,0 +1,51 @@
+.header {
+    background-color: #000;
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.logo {
+    font-size: 1.3em;
+    font-weight: bold;
+    letter-spacing: 0.11em;
+    margin-left: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.01);
+}
+
+.menuIcon {
+    padding: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.18em;
+    transition: opacity 0.6s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 1;
+    position: relative;
+}
+
+.menuIconTransition {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+a {
+    color: white;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #ccc;
+}
+
+a:link {
+    text-decoration: none;
+}
